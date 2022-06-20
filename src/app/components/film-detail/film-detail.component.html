@@ -1,0 +1,24 @@
+<div class="filmDetailSection">
+    <h1>{{filmDetails.title}}</h1>
+    <div class="filmDetailRow">
+        <div class="filmDetailColLeft">
+            <p [innerHTML]="filmDetails.opening_crawl">
+                
+            </p>
+        </div>
+        <div class="filmDetailColRight">
+            <div>
+                <h3>DETAIL</h3>
+                <p><span>Director: </span> {{filmDetails.director}}</p>
+                <p><span>Producer: </span> {{filmDetails.producer}}</p>
+                <p><span>Release Date: </span> {{filmDetails.release_date}}</p>
+            </div>
+
+            <div class="filmDetailCharacter">
+                <h3>CHARACTERS</h3>
+                <p *ngFor="let character of characterList" class="characterItem"><a
+                        routerLink="/character/{{getCharacterId(character.url)}}">{{character.name}}</a></p>
+            </div>
+        </div>
+    </div>
+</div>

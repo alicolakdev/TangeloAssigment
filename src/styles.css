@@ -1,1 +1,165 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'StarWars';
+    src: local('StarWars'), url(./assets/fonts/Starjedi.ttf) format("truetype");
+}
+
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+ul {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-block-end: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+}
+
+body h1,
+h2,
+h3 {
+    font-family: 'StarWars', sans-serif !important;
+}
+
+.sideHeaderArea {
+    background-color: #3F3F3F;
+}
+
+.sideHeader {
+    color: #FFE81F;
+}
+
+.navbar {
+    text-decoration: none;
+    background-color: #CCCCCC;
+}
+
+.navWrapper {
+    list-style: none;
+    display: flex;
+}
+
+.navElement {
+    margin-right: 10px;
+}
+
+.navElement a {
+    text-decoration: none;
+    color: #3F3F3F;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Roboto';
+}
+
+.navElement .active {
+    font-weight: 700 !important;
+    font-weight: bold !important;
+}
+
+.listHeader {
+    color: #3F3F3F;
+    position: absolute;
+    height: 22px;
+    padding-top: 70px;
+}
+
+.listTable {
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border: 1px solid #B9B9B9;
+    border-radius: 2px;
+    box-sizing: border-box;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.listTable th {
+    background: rgba(0, 0, 0, 0.05);
+    font-weight: 700;
+}
+
+.listTable th,
+td {
+    border: 1px solid #B9B9B9;
+    height: 36px;
+    text-align: left;
+    padding-left: 8px;
+}
+
+.listSection,
+.filmDetailSection {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.tableWrapper {
+    position: absolute;
+    padding-top: 100px;
+}
+
+.cardWrapper h3 a,
+td a,
+.filmDetailCharacter .characterItem a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #3E7CF4;
+}
+
+.cardWrapper {
+    position: absolute;
+    padding-top: 100px;
+    width: 100%;
+}
+
+.cardWrapper p span {
+    font-weight: 700;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .tableWrapper {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .cardWrapper {
+        visibility: hidden;
+    }
+}
+
+.filmDetailRow {
+    /* justify-content: space-between; */
+    display: flex;
+}
+
+.filmDetailColRight {
+    width: 50%;
+    padding-left: 15px;
+}
+
+.filmDetailColLeft {
+    width: 50%;
+    padding-left: 15px;
+}
+
+@media only screen and (max-width: 480px) {
+    .filmDetailRow {
+        flex-direction: column;
+
+    }
+
+    .filmDetailColRight div {
+        padding-top: 20px;
+    }
+}

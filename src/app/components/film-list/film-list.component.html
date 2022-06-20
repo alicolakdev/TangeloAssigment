@@ -1,0 +1,33 @@
+<div class="listSection">
+    <div>
+        <h3 class="listHeader">Films</h3>
+    </div>
+    
+    <div class="tableWrapper">
+        <table class="listTable">
+            <tr>
+                <th>Movie</th>
+                <th>Director</th>
+                <th>Producer</th>
+                <th>Release Date</th>
+            </tr>
+            <tr *ngFor="let film of filmList.results">
+                <td><a routerLink="filmdetail/{{film.episode_id}}">{{film.title}}</a></td>
+                <td>{{film.director}}</td>
+                <td>{{film.producer}}</td>
+                <td>{{film.release_date}}</td>
+            </tr>
+        </table>
+        <p><span>Page {{page}} of {{totalPage}}, {{filmList.count}} total results.</span></p>
+    </div>
+
+    <div class="cardWrapper">
+        <div *ngFor="let film of filmList.results">
+            <h3><a routerLink="filmdetail/{{film.episode_id}}">{{film.title}}</a></h3>
+            <p><span>Director: </span> {{film.director}}</p>
+            <p><span>Producer: </span> {{film.producer}}</p>
+            <p><span>Release Date: </span> {{film.release_date}}</p>
+            <hr>
+        </div>
+    </div>
+</div>

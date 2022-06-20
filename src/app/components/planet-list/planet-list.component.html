@@ -1,0 +1,45 @@
+<div class="listSection">
+    <div>
+        <h3 class="listHeader">Planets</h3>
+    </div>
+
+    <div class="tableWrapper">
+        <table class="listTable" *ngIf="planetList != null || planetList != undefined">
+            <tr>
+                <th>Name</th>
+                <th>Population</th>
+                <th>Terrain</th>
+                <th>Surface Water</th>
+            </tr>
+            <tr *ngFor="let planet of planetList.results | paginate
+            : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              };
+        let i = index">
+                <td><a routerLink="/planet/{{getPlanetId(planet.url)}}">{{planet.name}}</a></td>
+                <td>{{planet.population}}</td>
+                <td>{{planet.terrain}}</td>
+                <td>{{planet.surface_water}}</td>
+            </tr>
+        </table>
+        <p><span>Page {{page}} of {{totalPage}}, {{planetList.count}} total results.</span></p>
+
+        <div class="d-flex justify-content-center">
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+        </div>
+
+    </div>
+
+    <div class="cardWrapper">
+        <div *ngFor="let planet of planetList.results">
+            <h3>Name: <span>{{planet.name}}</span></h3>
+            <p><span>Population: </span> {{planet.population}}</p>
+            <p><span>Terrain: </span> {{planet.terrain}}</p>
+            <p><span>Release Date: </span> {{planet.surface_water}}</p>
+            <hr>
+        </div>
+    </div>
+</div>
